@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEON SLOTS — Casino</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="confetti-container" id="confettiContainer"></div>
+
+<div class="machine-wrap" id="machineWrap">
+
+  <div class="marquee-top">
+    <div class="machine-title">SLOTS</div>
+    <div class="subtitle">★ Lucky Fortune Casino ★</div>
+  </div>
+
+  <div class="lights-strip" id="lightsStrip">
+  </div>
+
+  <div class="machine-body">
+
+    <div class="jackpot-bar">
+      <span class="jackpot-label">◆ JACKPOT ◆</span>
+      <span class="jackpot-amount" id="jackpotAmt">$25,000</span>
+    </div>
+
+    <div class="reels-container" id="reelsContainer">
+      <div class="payline" id="payline"></div>
+      <div class="reel-window" id="reel0"><div class="reel-track" id="track0"></div></div>
+      <div class="reel-window" id="reel1"><div class="reel-track" id="track1"></div></div>
+      <div class="reel-window" id="reel2"><div class="reel-track" id="track2"></div></div>
+      <div class="reel-window" id="reel3"><div class="reel-track" id="track3"></div></div>
+      <div class="reel-window" id="reel4"><div class="reel-track" id="track4"></div></div>
+      <div class="win-overlay" id="winOverlay"></div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-label">Balance</div>
+        <div class="stat-value" id="balanceDisplay">$1,000</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Last Win</div>
+        <div class="stat-value green" id="lastWinDisplay">$0</div>
+      </div>
+    </div>
+
+    <div class="bet-section">
+      <div class="bet-row">
+        <span class="bet-label">BET</span>
+        <input class="bet-input" type="number" id="betInput" value="10" min="1" max="1000">
+        <button class="bet-btn" id="betMinus" onclick="adjustBet(-10)">- 10</button>
+        <button class="bet-btn" id="betPlus" onclick="adjustBet(10)">+ 10</button>
+        <button class="bet-btn max" id="maxBetBtn" onclick="maxBet()">MAX</button>
+      </div>
+      <div class="chips-row" id="chipsRow">
+        <button class="chip" data-bet="5" onclick="setBet(5)">$5</button>
+        <button class="chip" data-bet="10" onclick="setBet(10)">$10</button>
+        <button class="chip" data-bet="25" onclick="setBet(25)">$25</button>
+        <button class="chip" data-bet="50" onclick="setBet(50)">$50</button>
+        <button class="chip" data-bet="100" onclick="setBet(100)">$100</button>
+        <button class="chip" data-bet="250" onclick="setBet(250)">$250</button>
+      </div>
+
+      <div class="message-display">
+        <div class="message-text" id="msgText"></div>
+      </div>
+
+      <button class="spin-btn" id="spinBtn" onclick="spin()">S P I N</button>
+    </div>
+
+  </div>
+
+  <div class="machine-footer">
+    <div class="payout-title">— PAYOUT TABLE —</div>
+    <div class="payout-grid" id="payoutGrid"></div>
+    <div class="session-bar">
+      <div class="sess-item">
+        <span class="sess-label">Spins</span>
+        <span class="sess-val" id="sessSpins">0</span>
+      </div>
+      <div class="sess-item">
+        <span class="sess-label">Wins</span>
+        <span class="sess-val" id="sessWins">0</span>
+      </div>
+      <div class="sess-item">
+        <span class="sess-label">Total Won</span>
+        <span class="sess-val" id="sessTotalWon">$0</span>
+      </div>
+      <div class="sess-item">
+        <span class="sess-label">Best Win</span>
+        <span class="sess-val" id="sessBestWin">$0</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
