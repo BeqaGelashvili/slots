@@ -11,7 +11,6 @@ const SYMBOLS = [
   { id: 'orange',  emoji: '🍊',  weight: 18, payout3: 4,  payout2: 0,  label: 'ORG'                  },
 ];
 
-// Build weighted pool
 const POOL = [];
 for (const sym of SYMBOLS) {
   for (let i = 0; i < sym.weight; i++) POOL.push(sym);
@@ -22,9 +21,6 @@ const CELL_H = 73.33;
 const VISIBLE = 3;
 const CELLS_PER_REEL = 24;
 
-// =====================
-// STATE
-// =====================
 let balance = parseInt(localStorage.getItem('nslots_balance') || '1000');
 let bet = parseInt(localStorage.getItem('nslots_bet') || '10');
 let isSpinning = false;
