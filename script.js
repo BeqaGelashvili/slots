@@ -83,8 +83,8 @@ function startSpinSound() {
     spinOscillator.connect(gain);
     gain.connect(ctx.destination);
     spinOscillator.type = 'sawtooth';
-    spinOscillator.frequency.setValueAtTime(80, ctx.currentTime);
-    gain.gain.setValueAtTime(0.05, ctx.currentTime);
+    spinOscillator.frequency.setValueAtTime(50, ctx.currentTime);
+    gain.gain.setValueAtTime(0.01, ctx.currentTime);
     spinOscillator.start();
   } catch(e) {}
 }
